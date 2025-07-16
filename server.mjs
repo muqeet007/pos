@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser'
 import authRoutes from './routes/auth.routes.mjs'
 import productRoutes from './routes/product.routes.mjs';  
 import orderRoutes from './routes/order.routes.mjs';  
+import dashboardRoutes from './routes/dashboard.routes.mjs';
 
 const app=express()
 app.use(cors({
@@ -18,6 +19,7 @@ app.use(cookieParser())
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/dashboard', dashboardRoutes); 
 
 // Testing
 // app.get("/", (req, res) => {
