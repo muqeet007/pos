@@ -1,4 +1,5 @@
 import express from 'express';
+import { getMyOrders } from '../controllers/order.controller.mjs';
 import {
   createOrder,
   getOrders,
@@ -15,9 +16,13 @@ router.route('/')
   .post(protect, createOrder)
   .get(protect, getOrders);
 
+router.get('/my', protect, getMyOrders);
+
 router.route('/:id')
   .get(protect, getOrderById)
   .put(protect, updateOrderStatus)
   .delete(protect, deleteOrder);
+
+  
 
 export default router;
